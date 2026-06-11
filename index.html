@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Outfit Finder</title>
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#111;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+.box{
+background:#1c1c1c;
+padding:25px;
+border-radius:15px;
+width:90%;
+max-width:500px;
+text-align:center;
+}
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+}
+button{
+background:#00c853;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+}
+#hasil{
+margin-top:20px;
+}
+</style>
+</head>
+<body>
 
+<div class="box">
+<h1>AI Outfit Finder</h1>
+<p>Masukkan produk yang ingin dicari</p>
+
+<input type="text" id="produk" placeholder="Contoh: dress wanita">
+
+<button onclick="cariProduk()">Cari Produk</button>
+
+<div id="hasil"></div>
+</div>
+
+<script>
+function cariProduk(){
+let produk=document.getElementById("produk").value;
+
+document.getElementById("hasil").innerHTML=
+`
+<h3>Hasil Pencarian</h3>
+<p>${produk}</p>
+<a href="https://shopee.co.id/search?keyword=${encodeURIComponent(produk)}" target="_blank">
+<button>Buka di Shopee</button>
+</a>
+`;
+}
+</script>
+
+</body>
+</html>
